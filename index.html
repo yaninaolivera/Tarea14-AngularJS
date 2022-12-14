@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-app="myApp">
+        <div class="container" ng-controller="myCtrl">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 mt-5">
+                    <div class="card">
+                        <div class="card-header bg-success text-center">
+                            <h4 class="text-white mt-1">Formulario de Empleado</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label><b>Código de Empleado</b></label>
+                                    <input type="text" class="form-control" ng-model="form.codigo" placeholder="Ingrese código">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label><b>Horas de trabajo</b></label>
+                                            <input type="number" class="form-control" ng-model="form.horas"
+                                                placeholder="Ingrese el N° de horas trabajadas">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label><b>Tarifa por Hora</b></label>
+                                            <input type="number" class="form-control" ng-model="form.tarifa" placeholder="Ingrese la tarifa">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3 mb-3">
+                                    <button type="button" class="btn btn-success" ng-click="calcular()">Calcular</button>
+                                </div>
+                            </form> <hr>
+                            <p class="text-center">
+                                <b>Sueldo Bruto: S/ </b>{{sueldoBruto}} |
+                                <b class="text-danger">Descuento: S/ </b>{{descuento}} |
+                                <b>Sueldo Neto: S/ </b>{{sueldoBruto - descuento}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
